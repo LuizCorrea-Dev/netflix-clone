@@ -1,0 +1,363 @@
+:root{
+    --vermelho:#E50914;
+    --preta:#141414;
+    overflow-x: hidden;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+/*elementos base*/
+body{
+   background: var(--preta);
+   font-family: 'Arial', Times, serif;
+   color:white;
+   background: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)100%),  
+    url('/img/fundo.jpg');
+}
+a {
+    text-decoration: none;  
+}
+
+
+header .container{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+header .logo{
+    margin-left: 5px;
+    color: var(--vermelho);
+    font-family: 'Arial Black', Times;
+    font-size:40px;
+
+    
+}
+.logo2{
+    background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)100%),  
+    url('/img/logo-dw-fc.png');
+    background-repeat: no-repeat;
+    background-size:100%;
+    width: 300px;
+    height: 40px;
+}
+
+header nav a{
+    text-decoration:none;
+    color:#AAA;
+    margin-right: 10px;
+}
+
+
+header nav a:hover{
+    color:#fff!;
+}
+
+/*filme principal*/
+.filme-principal{
+    font-size:16px;
+    background: linear-gradient(rgba(0,0,0,.70),rgba(0,0,0,.70)100%),  
+    url('/img/capa-DRWHO.jpg');
+    height:100%;
+    background-size:cover;
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+
+
+.filme-principal .descricao{
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+
+.filme-principal .titulo{
+    margin-top: 15%;
+    font-size: 40px;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+.botao{
+    background-color: rgba(0,0,0,.50);
+    border:none;
+    color: white;
+
+    padding:15px 30px;
+    margin-right: 15px;
+    font-size: 12px;
+
+    cursor: pointer;
+    transition: .3s ease all;
+}
+
+.botao:hover{
+    background-color:white;
+    color: rgb(0, 0, 0) !important;
+}
+
+.botao i{
+    margin-right: 8px;
+}
+
+
+.container{
+    margin-left: 20px;
+}
+
+.filme-principal .container{
+    width: 90%;
+}
+
+.box-filme{
+    height: 100%;
+    width: 100%;
+    display: block;
+    cursor: pointer;
+}
+.vazia {
+    height:300px;
+}
+
+
+.carrosel-filmes{
+    margin-top: 10px;
+}
+
+
+.tituloCarrosel{
+    position: absolute;
+      background-color: rgba(0,0,0,0.5);
+      color:#fff;
+      text-align: center;
+      top: 10px;
+      width: 250px;
+      line-height: 30px;
+      height: 30px;
+}
+
+
+
+/**------------- modal trailer ------------*/
+.modalTrailer {
+    position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+.modalTrailer:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+.modalTrailer > div {
+    width: 60%;
+    height: auto;
+	position: relative;
+	margin: 2% auto;	
+	border-radius: 10px;
+	background: rgb(0, 0, 0);  
+	align-content: center;
+    text-align: center;
+}
+.video {
+    width:100%;
+    height:410px;
+}
+.fechar {
+    background: #1f1f1f;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.fechar:hover { background:  var(--vermelho);; }
+
+
+/**---------modal DESCRIÇÃO-------------*/
+.modal {
+    position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+.modal:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+.modal > div {
+    width: 70%;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: rgba(135, 135, 135, 0.5);  
+	
+}
+.fechar {
+    background: #1f1f1f;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.fechar:hover { background:  var(--vermelho);; }
+
+.myGrid {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid: 
+        "a1 b1" 1fr
+	    "a2 b2" 1fr
+        / 1fr 1fr;
+    grid-gap: 16px;
+}
+.a1 {
+    grid-area: a1;
+    padding: 10px;
+}
+.b1 {
+    grid-area: b1;
+    padding: 10px;
+}
+.a2 {
+    grid-area: a2;
+    padding: 10px;
+}
+.b2 {
+    grid-area: b2;
+    padding: 10px;
+}
+
+.fichatecnicaModal {
+    padding-bottom: 20px;
+    padding-top: 20px;
+   }
+span {
+    font-weight: bold;
+    line-height: 1.8;
+}
+.pModel{
+    line-height: 1.8
+}
+.boxNumber {
+    border: 1px solid rgba(204, 203, 203, 0.6);
+    color: rgb(61, 61, 61);
+    cursor: default;
+    border-radius: 3px;
+    display: inline-block;
+    font-family: Arial Narrow,Arial,sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 20px;
+    padding-right: 1px;
+    width: 20px;
+    background-color: #ffcb05;
+    margin-right: 5px;
+}
+
+/*----- anuncio -----*/
+.anuncio{
+    font-size:16px;
+    background: linear-gradient(rgba(0,0,0,.70),rgba(0,0,0,.70)100%),  
+    url('/img/Doctor-Who-Flux-BBC.jpg');
+    width:100%;
+    background-size:cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    color: white;
+}
+.anuncio .descricao{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    line-height: 1.5;
+    font-weight:100;
+    color: white;
+}
+.anuncio .negrito{
+    font-weight: bold;
+    font-size: larger;
+}
+.anuncio .titulo{
+    margin-top: 1%;
+    font-size: 40px;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+.anuncio strong {
+    font-size: 26px;
+}
+.anuncio .container{
+    margin-top: 10%;  
+    margin-bottom: 5%;
+    width: 100%;    
+}
+.message {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    text-align: center;
+    font-size: xx-large;
+}
+.videomessage{
+    margin-bottom: 5%;
+}
+
+/*--------- efeito parallax --------*/
+.parallax{
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+
+
