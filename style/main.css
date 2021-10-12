@@ -28,6 +28,7 @@ header .container{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+  
     
 }
 
@@ -70,6 +71,7 @@ header nav a:hover{
     flex-direction: column;
     justify-content: center;
     align-items:center;
+    color: white;
 }
 
 
